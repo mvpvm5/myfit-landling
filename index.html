@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyFit.ai — Neon Landing (static demo)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body { background:#0F0F1A; color:#E6EAF2; }
+    .card { background: rgba(21,22,39,.9); border:1px solid rgba(255,255,255,.08); border-radius:18px; box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+    .glow-a { box-shadow: 0 0 16px rgba(0,198,174,.35); }
+    .glow-p { box-shadow: 0 0 8px rgba(125,95,255,.35); }
+    .ring-kpi{ border-radius:9999px; background:
+      conic-gradient(var(--c,#00C6AE) var(--v,60%), #1a1b2e var(--v,60%));
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <!-- Top nav -->
+  <header class="sticky top-0 z-50 backdrop-blur border-b border-white/10/ bg-[#0F0F1A]/70">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-8 w-8 rounded-xl bg-gradient-to-br from-[#7D5FFF] to-[#00C6AE] grid place-items-center font-bold">μ</div>
+        <span class="font-semibold">MYFIT AI</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm text-slate-400">
+        <a href="#features" class="hover:text-white">Features</a>
+        <a href="#preview" class="hover:text-white">Preview</a>
+        <a href="#cta" class="hover:text-white">Start</a>
+      </nav>
+      <div class="flex gap-2">
+        <button class="px-4 py-2 rounded-xl border border-white/10 bg-[#151627] hover:bg-white/5">Log in</button>
+        <button class="px-4 py-2 rounded-xl bg-[#00C6AE] text-[#0F0F1A] font-medium glow-a hover:opacity-90">Get Started</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute -top-24 -right-24 h-[520px] w-[520px] rounded-full blur-3xl opacity-40"
+         style="background:radial-gradient(closest-side,#00C6AE33,transparent)"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-24 h-[520px] w-[520px] rounded-full blur-3xl opacity-40"
+         style="background:radial-gradient(closest-side,#7D5FFF33,transparent)"></div>
+
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          Your personal AI coach <br/> for smarter fitness
+        </h1>
+        <p class="mt-4 text-slate-400 md:text-lg">
+          Track, analyze, and improve — one tap at a time.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#cta" class="px-5 py-3 rounded-2xl bg-[#00C6AE] text-[#0F0F1A] font-medium glow-a hover:opacity-90">Try demo</a>
+          <a href="#features" class="px-5 py-3 rounded-2xl border border-white/10 bg-[#151627] hover:bg-white/5">Start free</a>
+        </div>
+        <p class="mt-3 text-xs text-slate-400">Privacy-first • PWA • Export CSV • Guidance only</p>
+      </div>
+
+      <!-- Dashboard preview -->
+      <div id="preview" class="relative">
+        <div class="absolute -inset-4 blur-2xl rounded-3xl bg-gradient-to-br from-[#7D5FFF33] to-[#00C6AE33]"></div>
+        <div class="relative card p-5">
+          <div class="flex items-center justify-between text-sm text-slate-400 pb-3 border-b border-white/10">
+            <span class="font-semibold text-white">DASHBOARD</span>
+            <div class="flex gap-2">
+              <button class="px-2 py-1 rounded-full bg-white/5 text-xs">7D</button>
+              <button class="px-2 py-1 rounded-full bg-white/10 text-xs text-white">30D</button>
+              <button class="px-2 py-1 rounded-full bg-white/5 text-xs">90D</button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 pt-4">
+            <div class="card p-4">
+              <div class="flex items-center gap-3">
+                <div class="ring-kpi h-10 w-10" style="--c:#00C6AE;--v:70%"></div>
+                <div>
+                  <div class="text-xs text-slate-400">Water</div>
+                  <div class="font-semibold">1800 ml</div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4">
+              <div class="flex items-center gap-3">
+                <div class="ring-kpi h-10 w-10" style="--c:#7D5FFF;--v:55%"></div>
+                <div>
+                  <div class="text-xs text-slate-400">Calories</div>
+                  <div class="font-semibold">1420 kcal</div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4">
+              <div class="flex items-center gap-3">
+                <div class="ring-kpi h-10 w-10" style="--c:#9D8CFF;--v:40%"></div>
+                <div>
+                  <div class="text-xs text-slate-400">Weight</div>
+                  <div class="font-semibold">59.8 kg</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-3 mt-3">
+            <div class="card p-4">
+              <div class="text-sm font-semibold mb-1">AI Tip</div>
+              <p class="text-sm text-slate-400">Stay consistent with your routine and remember that progress takes time.</p>
+            </div>
+            <div class="card p-4">
+              <div class="text-sm font-semibold mb-1">Progress</div>
+              <svg viewBox="0 0 300 120" class="w-full h-28">
+                <polyline fill="none" stroke="#00C6AE" stroke-width="3"
+                          points="0,90 30,84 60,86 90,82 120,78 150,70 180,66 210,60 240,54 270,48 300,44"></polyline>
+                <polyline fill="none" stroke="#7D5FFF" stroke-width="3" opacity=".6"
+                          points="0,95 30,92 60,94 90,90 120,88 150,82 180,80 210,78 240,76 270,72 300,70"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mt-4">
+            <button class="px-4 py-2 rounded-xl border border-white/10 bg-[#151627] hover:bg-white/5">+ 250 ml</button>
+            <button class="px-4 py-2 rounded-xl border border-white/10 bg-[#151627] hover:bg-white/5">Add meal</button>
+            <button class="px-4 py-2 rounded-xl border border-white/10 bg-[#151627] hover:bg-white/5">Add workout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-[#7D5FFF] to-[#00C6AE] mb-3"></div>
+          <h3 class="font-semibold">Advanced Tracking</h3>
+          <p class="text-sm text-slate-400 mt-1">Log water, meals & workouts in seconds.</p>
+        </div>
+        <div class="card p-6">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-[#7D5FFF] to-[#00C6AE] mb-3"></div>
+          <h3 class="font-semibold">Personalized Guidance</h3>
+          <p class="text-sm text-slate-400 mt-1">AI tips when progress stalls.</p>
+        </div>
+        <div class="card p-6">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-[#7D5FFF] to-[#00C6AE] mb-3"></div>
+          <h3 class="font-semibold">Goal Progression</h3>
+          <p class="text-sm text-slate-400 mt-1">Clear trends over 7/30/90 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="pb-16">
+    <div class="mx-auto max-w-5xl px-4">
+      <div class="card p-8 md:p-12 text-center">
+        <h3 class="text-3xl md:text-4xl font-extrabold">Start today for a healthier tomorrow</h3>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="#" class="px-5 py-3 rounded-2xl bg-[#00C6AE] text-[#0F0F1A] font-medium glow-a hover:opacity-90">Sign Up</a>
+          <a href="#" class="px-5 py-3 rounded-2xl border border-white/10 bg-[#151627] hover:bg-white/5">See Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+      <div class="flex items-center gap-2">
+        <div class="h-6 w-6 rounded-md bg-gradient-to-br from-[#7D5FFF] to-[#00C6AE]"></div>
+        <span>MyFit.ai</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Contact</a>
+      </div>
+      <p>© <span id="y"></span> MyFit.ai</p>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
